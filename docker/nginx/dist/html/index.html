@@ -3,23 +3,26 @@
 <head>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'">
     <meta charset="UTF-8">
+    <!-- Add favicon of logo -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <!--Setup Font Awesome-->
     <link href="assets/fonts/awesome/css/all.css" rel="stylesheet">
     <!--Setup Particles, Particles Conf, Clock-->
     <!-- Check integrity: openssl dgst -sha384 -binary your.file.name | openssl base64 -A-->
     <script src="assets/js/particles.min.js" defer integrity="sha384-d+UOwmNNIC7V4izkTAKSXzWhjC2GxiS9PTykO1XdOPC3nc2z65UOS7SP6QdKPA70" crossorigin="anonymous"></script>
-    <script src="assets/js/particles_conf.js" defer integrity="sha384-0191YAiOrh905UCYh44ZxeO+pKbvuEOIDEmo3F6qHKDL8FO8s66r6P2w8NGMWp7I" crossorigin="anonymous"></script>
+    <script src="assets/js/particles_conf.js" defer crossorigin="anonymous"></script>
     <script src="assets/js/clock.js" defer integrity="sha384-ymJnuq0yExd1vCEQFQAvYDv0IWfHL1XJYSRt2nyK73ofjF6GzG5baOjLN1dLkGLI" crossorigin="anonymous"></script>
+    <!--    <script src="assets/js/particles_conf.js" defer integrity="sha384-0191YAiOrh905UCYh44ZxeO+pKbvuEOIDEmo3F6qHKDL8FO8s66r6P2w8NGMWp7I" crossorigin="anonymous"></script>-->
 
-    <title>T-Pot</title>
+    <title>BestDefense.io</title>
     <style>
         /* russo-one-regular - latin */
         @font-face {
-          font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-          font-family: 'Russo One';
-          font-style: normal;
-          font-weight: 400;
-          src: url('assets/fonts/russo-one-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+            font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+            font-family: 'Russo One';
+            font-style: normal;
+            font-weight: 400;
+            src: url('assets/fonts/russo-one-v16-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
         }
         body, html {
             margin: 0;
@@ -30,7 +33,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
-            background-color: #000;
+            background-color: #FFF;
             font-family: 'Russo One', normal;
         }
         .header-container {
@@ -43,7 +46,7 @@
             right: 20px;
         }
         .clock-container, .dynamic-text {
-            color: #e20074;
+            color: #36a3f7;
             font-size: 72px;
         }
         .dynamic-text {
@@ -83,7 +86,7 @@
             margin: 0 10px;
             padding: 20px;
             padding-top: 60px;
-            background: rgba(51, 51, 51, 0.3);
+            background: rgba(51, 51, 51, 0.6);
             border-radius: 20px;
             text-align: center;
             transition: box-shadow 0.5s ease;
@@ -106,17 +109,17 @@
             left: 50%;
             transform: translateX(-50%);
             background: transparent;
-            color: #FFF;
+            color: #000;
             padding: 0 10px;
             font-size: 36px;
             white-space: nowrap;
         }
         .link-box:hover {
-            box-shadow: 0 0 15px 5px rgba(226, 0, 116, 0.6);
-            background: rgba(51, 51, 51, 0.3);
+            box-shadow: 0 0 15px 5px rgba(54, 163, 247, 0.6);
+            background: rgba(51, 51, 51, 0.6);
         }
         .link-box:hover::before {
-            color: #e20074;
+            color: #36a3f7;
             transition: color 0.5s ease;
         }
         .link {
@@ -128,7 +131,7 @@
             transition: color 0.5s ease;
         }
         .link:hover {
-            color: #e20074;
+            color: #36a3f7;
         }
     </style>
 </head>
@@ -138,11 +141,11 @@
 
 <div class="header-container">
     <div class="clock-container" id="clock"></div>
-    <div class="dynamic-text">T-Pot 24.04.0</div>
+    <div class="dynamic-text">BestDefense.io 24.04.0</div>
 </div>
 
 <div class="logo-container">
-    <img src="assets/img/logo.webp" alt="T-Pot Logo" class="logo">
+    <img src="assets/img/shield.svg" alt="BestDefense Logo" class="logo">
 </div>
 
 <div class="boxes-container">
@@ -152,11 +155,14 @@
         <a href="/elasticvue/" class="link" target="_blank">Elasticvue</a>
         <a href="/kibana/" class="link" target="_blank">Kibana</a>
         <a href="/spiderfoot/" class="link" target="_blank">Spiderfoot</a>
+
     </div>
-    <div class="link-box links-box" data-caption="&#xf0c1;">
-        <a href="https://sicherheitstacho.eu/" class="link" target="_blank">SecurityMeter</a>
-        <a href="https://github.com/telekom-security/tpotce/blob/master/README.md" class="link" target="_blank">T-Pot ReadMe</a>
-        <a href="https://github.com/telekom-security/tpotce/" class="link" target="_blank">T-Pot @ Github</a>
+    <div class="link-box tools-box" data-caption="&#xf085;">
+        <a href="/kibana/app/dashboards#/view/NGINX?_g=h@f287cfa" class="link" target="_blank">NGINX</a>
+        <a href="/kibana/app/dashboards#/view/Suricata?_g=h@3a04046" class="link" target="_blank">Suricata</a>
+        <a href="/kibana/app/dashboards#/view/8d4e8300-ebde-11e8-9675-1b303bfb38ef?_g=h@3a04046" class="link" target="_blank">Centralized Attack Monitor</a>
+        <a href="/kibana/app/dashboards#/view/891769a0-fa2f-11e8-838f-fff066e21110?_g=h@3a04046" class="link" target="_blank">Mobile Device Attack Monitor</a>
+        <a href="/kibana/app/dashboards#/view/81284750-6e12-11ec-a667-cfa2ee57ea38?_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-24h%2Fh%2Cto%3Anow))" class="link" target="_blank">Live Attack Map</a>
     </div>
 </div>
 </body>
